@@ -14,7 +14,7 @@ def test_get_random_cat_image(mocker):
 
 def test_get_random_cat_image_with_error(mocker):
     mock_get = mocker.patch('requests.get')
-    mock_get.return_value.status_code = 500
+    mock_get.return_value.status_code = 404
 
     user_data = get_random_cat_image()
     assert user_data == None
